@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +53,7 @@
       font-family: inherit;
     }
 
-    /* All floating decorations start immediately on page load. */
+    /* Floating decorations */
     .floating-world {
       position: fixed;
       inset: 0;
@@ -73,7 +74,6 @@
       will-change: transform, opacity;
     }
 
-    /* Large floating white hearts */
     .float-heart {
       display: grid;
       place-items: center;
@@ -84,7 +84,6 @@
       filter: drop-shadow(0 6px 12px rgba(171, 133, 21, 0.08));
     }
 
-    /* Smaller floating yellow hearts and little bumblebees */
     .float-yellow-heart,
     .float-bee {
       display: grid;
@@ -99,7 +98,6 @@
       text-shadow: 0 3px 10px rgba(255, 216, 61, 0.25);
     }
 
-    /* Soft, transparent white balloons */
     .balloon {
       width: var(--size);
       height: calc(var(--size) * 1.2);
@@ -166,9 +164,7 @@
         transform: translate3d(0, 0, 0) rotate(-12deg) scale(.78);
         opacity: 0;
       }
-      8% {
-        opacity: .85;
-      }
+      8% { opacity: .85; }
       30% {
         transform: translate3d(22px, -32vh, 0) rotate(8deg) scale(1);
         opacity: .92;
@@ -177,9 +173,7 @@
         transform: translate3d(-22px, -70vh, 0) rotate(-6deg) scale(1.05);
         opacity: .76;
       }
-      85% {
-        opacity: .45;
-      }
+      85% { opacity: .45; }
       100% {
         transform: translate3d(20px, -125vh, 0) rotate(15deg) scale(1.08);
         opacity: 0;
@@ -204,14 +198,14 @@
       to { opacity: 1; transform: scale(1.2) rotate(18deg); }
     }
 
-    /* Birthday card */
+    /* Birthday card: slightly smaller */
     .card {
       position: relative;
       z-index: 1;
-      width: min(100%, 490px);
+      width: min(100%, 420px);
       overflow: hidden;
       border: 2px solid rgba(255, 255, 255, .96);
-      border-radius: 34px;
+      border-radius: 30px;
       background: rgba(255, 253, 245, .95);
       box-shadow:
         0 30px 100px rgba(128, 99, 7, .17),
@@ -225,11 +219,11 @@
     }
 
     .browser-bar {
-      height: 48px;
+      height: 44px;
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 0 16px;
+      padding: 0 14px;
       border-bottom: 1px solid var(--line);
       background: linear-gradient(90deg, #fff4c5, #fffdf3);
     }
@@ -256,7 +250,7 @@
     }
 
     .content {
-      padding: 30px 26px 25px;
+      padding: 24px 21px 21px;
       text-align: center;
     }
 
@@ -269,8 +263,8 @@
     }
 
     .hero-icon {
-      margin: 17px 0 9px;
-      font-size: 62px;
+      margin: 13px 0 7px;
+      font-size: 54px;
       line-height: 1.2;
       filter: drop-shadow(0 7px 10px rgba(211, 168, 18, .18));
       animation: gentleBounce 2.7s ease-in-out infinite;
@@ -287,8 +281,8 @@
     }
 
     h1 {
-      margin: 9px 0 15px;
-      font-size: clamp(36px, 9vw, 48px);
+      margin: 8px 0 12px;
+      font-size: clamp(32px, 8vw, 44px);
       line-height: 1.12;
       letter-spacing: -1px;
     }
@@ -300,10 +294,10 @@
 
     .subtitle {
       max-width: 350px;
-      margin: 0 auto 20px;
+      margin: 0 auto 15px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
+      font-size: 13px;
+      line-height: 1.8;
     }
 
     .divider {
@@ -311,7 +305,7 @@
       justify-content: center;
       align-items: center;
       gap: 12px;
-      margin: 18px 0;
+      margin: 14px 0;
       color: #d2aa20;
       font-size: 18px;
     }
@@ -325,12 +319,12 @@
     }
 
     .photo-frame {
-      height: 220px;
+      height: 180px;
       position: relative;
-      margin: 20px 0 25px;
+      margin: 16px 0 20px;
       overflow: hidden;
       border: 6px solid white;
-      border-radius: 24px;
+      border-radius: 22px;
       background: linear-gradient(135deg, #fff4bd, #fffdf3, #ffe68a);
       box-shadow: 0 8px 25px rgba(151, 113, 0, .12);
     }
@@ -355,24 +349,18 @@
       line-height: 1.7;
     }
 
-    .photo-placeholder .camera {
-      font-size: 43px;
-    }
+    .photo-placeholder .camera { font-size: 43px; }
+    .photo-placeholder small { color: #ac985e; font-size: 11px; }
 
-    .photo-placeholder small {
-      color: #ac985e;
-      font-size: 11px;
-    }
-
-    /* Attractive glowing birthday button */
+    /* Birthday buttons */
     .btn {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      min-height: 52px;
-      padding: 15px 25px;
+      min-height: 48px;
+      padding: 13px 21px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, .9);
       border-radius: 999px;
@@ -384,7 +372,7 @@
         0 0 22px rgba(255, 223, 91, .45);
       color: #594408;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       text-align: center;
       animation: buttonGlow 2s ease-in-out infinite, gradientMove 4s linear infinite;
@@ -404,10 +392,7 @@
       pointer-events: none;
     }
 
-    .btn > span {
-      position: relative;
-      z-index: 1;
-    }
+    .btn > span { position: relative; z-index: 1; }
 
     @keyframes buttonGlow {
       0%, 100% {
@@ -428,13 +413,8 @@
       to { background-position: 200% 50%; }
     }
 
-    .btn:hover {
-      transform: translateY(-3px) scale(1.035);
-    }
-
-    .btn:active {
-      transform: translateY(2px) scale(.99);
-    }
+    .btn:hover { transform: translateY(-3px) scale(1.035); }
+    .btn:active { transform: translateY(2px) scale(.99); }
 
     .btn-light {
       margin-top: 12px;
@@ -445,16 +425,14 @@
       animation: buttonGlow 3s ease-in-out infinite;
     }
 
-    .hidden {
-      display: none !important;
-    }
+    .hidden { display: none !important; }
 
     /* Quiz */
     .quiz {
-      margin-top: 25px;
-      padding: 21px 16px;
+      margin-top: 19px;
+      padding: 17px 13px;
       border: 1px solid #f0e1a7;
-      border-radius: 24px;
+      border-radius: 22px;
       background: linear-gradient(150deg, #fff8dc, #ffffff);
       text-align: left;
       animation: popIn .35s ease both;
@@ -467,7 +445,7 @@
 
     .quiz h2 {
       color: #8f700c;
-      font-size: 26px;
+      font-size: 24px;
       text-align: center;
     }
 
@@ -480,7 +458,7 @@
 
     .progress {
       height: 7px;
-      margin: 17px 0 21px;
+      margin: 15px 0 18px;
       overflow: hidden;
       border-radius: 20px;
       background: #f6edc9;
@@ -495,9 +473,9 @@
     }
 
     .question-text {
-      margin-bottom: 15px;
+      margin-bottom: 13px;
       color: #69551f;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       line-height: 1.65;
       text-align: center;
@@ -505,18 +483,18 @@
 
     .options {
       display: grid;
-      gap: 10px;
+      gap: 9px;
     }
 
     .option {
       width: 100%;
-      padding: 13px 14px;
+      padding: 11px 12px;
       border: 1px solid #f0e3b8;
-      border-radius: 15px;
+      border-radius: 14px;
       background: white;
       color: #79652e;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.5;
       text-align: left;
       transition: .2s;
@@ -528,58 +506,54 @@
       background: #fff9dd;
     }
 
-    .option:disabled {
-      cursor: default;
-      opacity: .9;
-    }
+    .option:disabled { cursor: default; }
 
+    /* Correct answer: soft pastel green */
     .option.correct {
-      border-color: #e4c13b;
-      background: #fff4b8;
-      color: #68520b;
+      border-color: #a8d9ad;
+      background: #e4f6e6;
+      color: #356b3d;
+      box-shadow: 0 2px 8px rgba(91, 160, 99, 0.10);
     }
 
+    /* Wrong selected answer: soft pastel red */
     .option.incorrect {
-      border-color: #f0d7a0;
-      background: #fffaf0;
+      border-color: #efb1aa;
+      background: #fde9e6;
+      color: #a64d45;
+      box-shadow: 0 2px 8px rgba(210, 105, 95, 0.08);
     }
 
     .feedback {
-      margin: 15px 0 0;
+      margin: 13px 0 0;
       color: #987a18;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.8;
       text-align: center;
     }
 
     .quiz-next {
       display: flex;
-      margin: 18px auto 0;
+      margin: 16px auto 0;
     }
 
     /* Quiz result */
     .result {
-      padding: 25px 17px;
+      padding: 21px 14px;
       border: 1px solid #f1e0a1;
-      border-radius: 23px;
+      border-radius: 21px;
       background: linear-gradient(145deg, #fff7c9, #ffffff);
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.9;
       text-align: center;
       animation: popIn .4s ease both;
     }
 
-    .result-icon {
-      margin-bottom: 8px;
-      font-size: 49px;
-    }
-
-    .result strong {
-      color: #9b7800;
-    }
+    .result-icon { margin-bottom: 8px; font-size: 45px; }
+    .result strong { color: #9b7800; }
 
     .result-message {
-      margin: 12px 0 19px;
+      margin: 11px 0 17px;
       color: #877440;
     }
 
@@ -630,10 +604,7 @@
       font-size: 21px;
     }
 
-    .popup-icon {
-      margin: 4px 0 10px;
-      font-size: 53px;
-    }
+    .popup-icon { margin: 4px 0 10px; font-size: 53px; }
 
     .popup h2 {
       margin-bottom: 15px;
@@ -660,28 +631,87 @@
       animation: popIn .4s ease;
     }
 
-    .gift-wrap { margin: 18px 0 5px; text-align: center; animation: popIn .45s ease; }
-    .gift-button { border: 0; background: transparent; cursor: pointer; color: var(--ink); font: inherit; }
-    .gift-emoji { display: block; font-size: clamp(76px, 18vw, 120px); line-height: 1.2; filter: drop-shadow(0 8px 12px rgba(151,113,0,.2)); animation: buttonGlow 2s ease-in-out infinite; }
+    .gift-wrap {
+      margin: 18px 0 5px;
+      text-align: center;
+      animation: popIn .45s ease;
+    }
+
+    .gift-button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .gift-emoji {
+      display: block;
+      font-size: clamp(76px, 18vw, 120px);
+      line-height: 1.2;
+      filter: drop-shadow(0 8px 12px rgba(151,113,0,.2));
+      animation: buttonGlow 2s ease-in-out infinite;
+    }
+
     .gift-caption { display: block; font-weight: 800; color: #987500; }
-    .video-backdrop { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 18px; background: rgba(75, 57, 15, .65); backdrop-filter: blur(7px); }
-    .video-card { position: relative; width: min(620px, 100%); padding: 22px; border: 2px solid white; border-radius: 24px; background: #fffdf5; box-shadow: 0 20px 70px rgba(0,0,0,.25); text-align: center; }
-    .video-card h2 { margin: 5px 35px 12px; color: #987500; font-family: "Playfair Display", serif; }
-    .video-card video { display: block; width: 100%; max-height: 65vh; border-radius: 15px; background: #fff2b6; }
-    .video-close { position: absolute; top: 8px; right: 12px; border: 0; background: transparent; font-size: 30px; cursor: pointer; color: #987500; }
+
+    .video-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: rgba(75, 57, 15, .65);
+      backdrop-filter: blur(7px);
+    }
+
+    .video-card {
+      position: relative;
+      width: min(620px, 100%);
+      padding: 22px;
+      border: 2px solid white;
+      border-radius: 24px;
+      background: #fffdf5;
+      box-shadow: 0 20px 70px rgba(0,0,0,.25);
+      text-align: center;
+    }
+
+    .video-card h2 {
+      margin: 5px 35px 12px;
+      color: #987500;
+      font-family: "Playfair Display", serif;
+    }
+
+    .video-card video {
+      display: block;
+      width: 100%;
+      max-height: 65vh;
+      border-radius: 15px;
+      background: #fff2b6;
+    }
+
+    .video-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      border: 0;
+      background: transparent;
+      font-size: 30px;
+      cursor: pointer;
+      color: #987500;
+    }
 
     .footer {
-      margin-top: 27px;
-      padding-top: 18px;
+      margin-top: 20px;
+      padding-top: 14px;
       border-top: 1px solid #f0e5b8;
       color: #aa965d;
-      font-size: 11px;
+      font-size: 10px;
       line-height: 2;
     }
 
-    .footer strong {
-      color: #a58316;
-    }
+    .footer strong { color: #a58316; }
 
     .footer-heart {
       display: inline-block;
@@ -690,13 +720,77 @@
       animation: gentleBounce 2s ease-in-out infinite;
     }
 
+    /* Smaller layout for phones, leaving more decorations visible */
     @media (max-width: 480px) {
-      body { padding: 16px 11px; }
-      .card { border-radius: 27px; }
-      .content { padding: 27px 19px 23px; }
-      .hero-icon { font-size: 54px; }
-      .photo-frame { height: 190px; }
-      .quiz { padding: 19px 13px; }
+      body {
+        padding: 10px 8px;
+      }
+
+      .card {
+        width: 100%;
+        border-radius: 23px;
+      }
+
+      .content {
+        padding: 19px 14px 17px;
+      }
+
+      .browser-bar {
+        height: 38px;
+        padding: 0 12px;
+      }
+
+      .hero-icon {
+        margin: 10px 0 6px;
+        font-size: 46px;
+      }
+
+      h1 {
+        margin: 6px 0 10px;
+        font-size: clamp(30px, 8vw, 38px);
+      }
+
+      .subtitle {
+        margin-bottom: 12px;
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .divider { margin: 12px 0; }
+
+      .photo-frame {
+        height: 155px;
+        margin: 14px 0 18px;
+      }
+
+      .btn {
+        min-height: 46px;
+        padding: 12px 17px;
+        font-size: 12px;
+      }
+
+      .quiz {
+        margin-top: 18px;
+        padding: 15px 11px;
+      }
+
+      .quiz h2 { font-size: 23px; }
+
+      .option {
+        padding: 11px 12px;
+        font-size: 12px;
+      }
+
+      .result {
+        padding: 19px 13px;
+        font-size: 13px;
+      }
+
+      .footer {
+        margin-top: 18px;
+        padding-top: 12px;
+        font-size: 10px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -710,7 +804,6 @@
 </head>
 
 <body>
-  <!-- Floating white hearts and transparent balloons -->
   <div class="floating-world" aria-hidden="true" id="floatingWorld"></div>
 
   <span class="twinkle one" aria-hidden="true">✧</span>
@@ -728,8 +821,6 @@
 
     <main class="content">
       <div class="eyebrow">A very important announcement</div>
-
-      <!-- Replaced bow and envelope emojis -->
       <div class="hero-icon" aria-hidden="true">💛🐝</div>
 
       <h1>
@@ -739,7 +830,7 @@
 
       <p class="subtitle">
         A little birthday magic for my favourite human. May your heart feel loved,
-         your smile stay bright,and your world be full of tiny happy moments. 💛🐝
+        your smile stay bright,and your world be full of tiny happy moments. 💛🐝
       </p>
 
       <div class="divider" aria-hidden="true">☀️ ♡ ✨</div>
@@ -793,7 +884,7 @@
         <strong>CONGRATULATIONS, ICHAAA!</strong>
 
         <p class="result-message">
-          Achievement unlocked: Stole Kuttu’s heart! 🔓💛 
+          Achievement unlocked: Stole Kuttu’s heart! 🔓💛
           The heart is yours now, and customer support does not accept returns. ❤️😂
         </p>
 
@@ -811,7 +902,6 @@
     </main>
   </article>
 
-  <!-- Birthday wishes popup -->
   <div
     class="popup-backdrop hidden"
     id="popupBackdrop"
@@ -828,21 +918,20 @@
       >×</button>
 
       <div class="popup-icon" aria-hidden="true">🎂🌻💛</div>
-
       <h2 id="popupTitle">Happy Birthday, Ponnaaa!</h2>
 
       <p class="popup-message">
-        Happy birthday, my love. ❤️ You mean more to me than words could ever explain. 
+        Happy birthday, my love. ❤️ You mean more to me than words could ever explain.
         No matter how far apart we are, you’ll always have a special place in my heart that no one else could ever take.
-         If I had to choose all over again, I would still choose you, every single time.
-         I hope life gives you all the happiness you deserve, and I hope I get to be a part of it.
-          I love you so much, Ichu. ❤️🥹😘
+        If I had to choose all over again, I would still choose you, every single time.
+        I hope life gives you all the happiness you deserve, and I hope I get to be a part of it.
+        I love you so much, Ichu. ❤️🥹😘
 
         <br><br>
 
-       Wishing you a beautiful year filled with happiness, love, and countless reasons to smile. 
-       May all your dreams come true, and may you always feel loved and appreciated.
-       You deserve all the wonderful things life has to offer. Happy Birthday, my favourite person! 💛🐝✨
+        Wishing you a beautiful year filled with happiness, love, and countless reasons to smile.
+        May all your dreams come true, and may you always feel loved and appreciated.
+        You deserve all the wonderful things life has to offer. Happy Birthday, my favourite person! 💛🐝✨
 
         <br><br>
 
@@ -856,10 +945,9 @@
       </button>
 
       <div class="last-line hidden" id="lastLine">
-        No matter the distance, my heart will always find its way to you, Ichu. 
+        No matter the distance, my heart will always find its way to you, Ichu.
         You’re my favourite place to belong. 🥹💛🫶🏻
         <br><br>
-
         <strong>Same team. Every innings. Always you + me. ♡</strong>
       </div>
 
@@ -872,7 +960,6 @@
     </div>
   </div>
 
-  <!-- Keep memories.mp4 in the same folder as this HTML file, or change the source to your video filename/URL. -->
   <div class="video-backdrop hidden" id="videoBackdrop" role="dialog" aria-modal="true" aria-labelledby="videoTitle">
     <div class="video-card">
       <button class="video-close" id="closeVideo" type="button" aria-label="Close video">×</button>
@@ -888,8 +975,7 @@
   <script>
     "use strict";
 
-    /* Create all floating decorations immediately when the page opens.
-       Random delays are short, so the screen is animated from the start. */
+    /* Create floating decorations immediately on page load. */
     const floatingWorld = document.getElementById("floatingWorld");
 
     const decorations = [
@@ -938,8 +1024,6 @@
       item.style.setProperty("--left", `${decoration.left}%`);
       item.style.setProperty("--size", `${decoration.size}px`);
       item.style.setProperty("--duration", `${decoration.duration}s`);
-
-      /* Small stagger, rather than a long wait after page refresh. */
       item.style.setProperty(
         "--delay",
         `${-(decoration.delay + (index % 4) * 0.35)}s`
@@ -1010,7 +1094,7 @@
       }
     ];
 
-        const $ = (id) => document.getElementById(id);
+    const $ = (id) => document.getElementById(id);
 
     const startButton = $("startButton");
     const quiz = $("quiz");
@@ -1080,9 +1164,13 @@
       optionsContainer.querySelectorAll(".option").forEach((button, index) => {
         button.disabled = true;
 
+        /* Always show the correct answer in pastel green. */
         if (index === question.correct) {
           button.classList.add("correct");
-        } else if (index === selectedIndex) {
+        }
+
+        /* Show the selected wrong answer in pastel red. */
+        if (index === selectedIndex && !isCorrect) {
           button.classList.add("incorrect");
         }
       });
@@ -1183,7 +1271,9 @@
       videoBackdrop.classList.remove("hidden");
       memoryVideo.currentTime = 0;
       const playAttempt = memoryVideo.play();
-      if (playAttempt && typeof playAttempt.catch === "function") playAttempt.catch(() => {});
+      if (playAttempt && typeof playAttempt.catch === "function") {
+        playAttempt.catch(() => {});
+      }
       closeVideoButton.focus();
     }
 
@@ -1194,11 +1284,16 @@
 
     giftButton.addEventListener("click", openMemoryVideo);
     closeVideoButton.addEventListener("click", closeMemoryVideo);
+
     videoBackdrop.addEventListener("click", (event) => {
       if (event.target === videoBackdrop) closeMemoryVideo();
     });
+
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !videoBackdrop.classList.contains("hidden")) {
+      if (
+        event.key === "Escape" &&
+        !videoBackdrop.classList.contains("hidden")
+      ) {
         closeMemoryVideo();
       }
     });
