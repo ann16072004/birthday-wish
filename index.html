@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0a6">
+  <title>For My Ichaaa ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --yellow: #ffdc62;
+      --sunshine: #ffe982;
+      --pale-yellow: #fff5c7;
+      --cream: #fffdf5;
+      --white: #ffffff;
+      --gold: #d9ac13;
+      --ink: #59471b;
+      --muted: #8e7c4e;
+      --line: #f1e2ac;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 24px 14px;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      position: relative;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, #fffdf4, transparent 30%),
+        radial-gradient(circle at 90% 85%, #ffec9d, transparent 35%),
+        linear-gradient(135deg, #ffe778, #fff2b6 50%, #ffdf66);
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* All floating decorations start immediately on page load. */
+    .floating-world {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      contain: strict;
+    }
+
+    .float-item {
+      position: absolute;
+      left: var(--left);
+      bottom: -160px;
+      width: var(--size);
+      height: var(--size);
+      opacity: 0;
+      animation: floatUp var(--duration) var(--delay) linear infinite;
+      will-change: transform, opacity;
+    }
+
+    /* Large floating white hearts */
+    .float-heart {
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, 0.96);
+      font-size: var(--size);
+      line-height: 1;
+      text-shadow: 0 5px 20px rgba(255, 255, 255, 0.28);
+      filter: drop-shadow(0 6px 12px rgba(171, 133, 21, 0.08));
+    }
+
+    /* Smaller floating yellow hearts and little bumblebees */
+    .float-yellow-heart,
+    .float-bee {
+      display: grid;
+      place-items: center;
+      font-size: var(--size);
+      line-height: 1;
+      filter: drop-shadow(0 4px 8px rgba(171, 133, 21, 0.12));
+    }
+
+    .float-yellow-heart {
+      color: #ffd83d;
+      text-shadow: 0 3px 10px rgba(255, 216, 61, 0.25);
+    }
+
+    /* Soft, transparent white balloons */
+    .balloon {
+      width: var(--size);
+      height: calc(var(--size) * 1.2);
+      border: 2px solid rgba(255, 255, 255, 0.83);
+      border-radius: 50% 50% 46% 46%;
+      background:
+        radial-gradient(
+          ellipse at 29% 23%,
+          rgba(255, 255, 255, 0.98) 0%,
+          rgba(255, 255, 255, 0.45) 13%,
+          rgba(255, 255, 255, 0.12) 38%,
+          rgba(255, 255, 255, 0.23) 70%,
+          rgba(255, 255, 255, 0.08) 100%
+        );
+      box-shadow:
+        inset 8px 5px 18px rgba(255, 255, 255, 0.25),
+        0 8px 24px rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(1px);
+    }
+
+    .balloon::before {
+      position: absolute;
+      top: 14%;
+      left: 19%;
+      width: 17%;
+      height: 24%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+      transform: rotate(30deg);
+      content: "";
+    }
+
+    .balloon::after {
+      position: absolute;
+      left: 50%;
+      bottom: -9px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid rgba(255, 255, 255, 0.85);
+      border-right: 6px solid transparent;
+      border-left: 6px solid transparent;
+      transform: translateX(-50%);
+      content: "";
+    }
+
+    .balloon-string {
+      position: absolute;
+      top: calc(100% + 7px);
+      left: 50%;
+      width: 1px;
+      height: calc(var(--size) * 0.9);
+      background: rgba(255, 255, 255, 0.85);
+      transform-origin: top;
+      animation: stringSwing 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes stringSwing {
+      from { transform: rotate(-8deg); }
+      to { transform: rotate(8deg); }
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(-12deg) scale(.78);
+        opacity: 0;
+      }
+      8% {
+        opacity: .85;
+      }
+      30% {
+        transform: translate3d(22px, -32vh, 0) rotate(8deg) scale(1);
+        opacity: .92;
+      }
+      60% {
+        transform: translate3d(-22px, -70vh, 0) rotate(-6deg) scale(1.05);
+        opacity: .76;
+      }
+      85% {
+        opacity: .45;
+      }
+      100% {
+        transform: translate3d(20px, -125vh, 0) rotate(15deg) scale(1.08);
+        opacity: 0;
+      }
+    }
+
+    .twinkle {
+      position: fixed;
+      z-index: 0;
+      color: white;
+      pointer-events: none;
+      animation: sparkle 2s ease-in-out infinite alternate;
+    }
+
+    .twinkle.one { top: 12%; left: 7%; font-size: 32px; }
+    .twinkle.two { top: 20%; right: 8%; font-size: 42px; animation-delay: .6s; }
+    .twinkle.three { bottom: 12%; left: 8%; font-size: 38px; animation-delay: 1s; }
+    .twinkle.four { bottom: 20%; right: 6%; font-size: 34px; animation-delay: .3s; }
+
+    @keyframes sparkle {
+      from { opacity: .4; transform: scale(.8) rotate(0deg); }
+      to { opacity: 1; transform: scale(1.2) rotate(18deg); }
+    }
+
+    /* Birthday card */
+    .card {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 490px);
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, .96);
+      border-radius: 34px;
+      background: rgba(255, 253, 245, .95);
+      box-shadow:
+        0 30px 100px rgba(128, 99, 7, .17),
+        0 8px 24px rgba(128, 99, 7, .07);
+      animation: cardIn .8s ease both;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(24px) scale(.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .browser-bar {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, #fff4c5, #fffdf3);
+    }
+
+    .browser-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #f1d36d;
+    }
+
+    .browser-address {
+      flex: 1;
+      margin-left: 5px;
+      padding: 7px 12px;
+      overflow: hidden;
+      border: 1px solid #f1e3b4;
+      border-radius: 30px;
+      background: white;
+      color: #a28a49;
+      font-size: 11px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .content {
+      padding: 30px 26px 25px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #b28a0b;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-icon {
+      margin: 17px 0 9px;
+      font-size: 62px;
+      line-height: 1.2;
+      filter: drop-shadow(0 7px 10px rgba(211, 168, 18, .18));
+      animation: gentleBounce 2.7s ease-in-out infinite;
+    }
+
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
+    }
+
+    h1, h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 9px 0 15px;
+      font-size: clamp(36px, 9vw, 48px);
+      line-height: 1.12;
+      letter-spacing: -1px;
+    }
+
+    h1 em {
+      color: #c79b09;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      max-width: 350px;
+      margin: 0 auto 20px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin: 18px 0;
+      color: #d2aa20;
+      font-size: 18px;
+    }
+
+    .divider::before,
+    .divider::after {
+      width: 60px;
+      height: 1px;
+      background: var(--line);
+      content: "";
+    }
+
+    .photo-frame {
+      height: 220px;
+      position: relative;
+      margin: 20px 0 25px;
+      overflow: hidden;
+      border: 6px solid white;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #fff4bd, #fffdf3, #ffe68a);
+      box-shadow: 0 8px 25px rgba(151, 113, 0, .12);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      gap: 8px;
+      padding: 20px;
+      color: #9d8237;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .photo-placeholder .camera {
+      font-size: 43px;
+    }
+
+    .photo-placeholder small {
+      color: #ac985e;
+      font-size: 11px;
+    }
+
+    /* Attractive glowing birthday button */
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 15px 25px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .9);
+      border-radius: 999px;
+      background: linear-gradient(110deg, #ffe56e, #ffcf35, #ffe982);
+      background-size: 200% 100%;
+      box-shadow:
+        0 5px 0 #d3a816,
+        0 10px 25px rgba(199, 157, 0, .25),
+        0 0 22px rgba(255, 223, 91, .45);
+      color: #594408;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      animation: buttonGlow 2s ease-in-out infinite, gradientMove 4s linear infinite;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn::before {
+      position: absolute;
+      top: -50%;
+      left: -80%;
+      width: 45%;
+      height: 200%;
+      background: rgba(255, 255, 255, .65);
+      transform: rotate(25deg);
+      animation: shine 3s ease-in-out infinite;
+      content: "";
+      pointer-events: none;
+    }
+
+    .btn > span {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes buttonGlow {
+      0%, 100% {
+        box-shadow: 0 5px 0 #d3a816, 0 10px 25px rgba(199,157,0,.22), 0 0 15px rgba(255,223,91,.4);
+      }
+      50% {
+        box-shadow: 0 5px 0 #d3a816, 0 12px 32px rgba(199,157,0,.35), 0 0 32px rgba(255,223,91,.85);
+      }
+    }
+
+    @keyframes shine {
+      0%, 20% { left: -80%; }
+      55%, 100% { left: 140%; }
+    }
+
+    @keyframes gradientMove {
+      from { background-position: 0% 50%; }
+      to { background-position: 200% 50%; }
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.035);
+    }
+
+    .btn:active {
+      transform: translateY(2px) scale(.99);
+    }
+
+    .btn-light {
+      margin-top: 12px;
+      border: 1px solid #f0e1a8;
+      background: white;
+      color: #95740b;
+      box-shadow: 0 4px 0 #eee2b8;
+      animation: buttonGlow 3s ease-in-out infinite;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Quiz */
+    .quiz {
+      margin-top: 25px;
+      padding: 21px 16px;
+      border: 1px solid #f0e1a7;
+      border-radius: 24px;
+      background: linear-gradient(150deg, #fff8dc, #ffffff);
+      text-align: left;
+      animation: popIn .35s ease both;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(12px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .quiz h2 {
+      color: #8f700c;
+      font-size: 26px;
+      text-align: center;
+    }
+
+    .quiz-subtitle {
+      margin-top: 5px;
+      color: #a18c52;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .progress {
+      height: 7px;
+      margin: 17px 0 21px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #f6edc9;
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #ffe36b, #e6b500);
+      transition: width .35s ease;
+    }
+
+    .question-text {
+      margin-bottom: 15px;
+      color: #69551f;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .option {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #f0e3b8;
+      border-radius: 15px;
+      background: white;
+      color: #79652e;
+      cursor: pointer;
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: left;
+      transition: .2s;
+    }
+
+    .option:hover:not(:disabled) {
+      transform: translateY(-2px);
+      border-color: #e5c64f;
+      background: #fff9dd;
+    }
+
+    .option:disabled {
+      cursor: default;
+      opacity: .9;
+    }
+
+    .option.correct {
+      border-color: #e4c13b;
+      background: #fff4b8;
+      color: #68520b;
+    }
+
+    .option.incorrect {
+      border-color: #f0d7a0;
+      background: #fffaf0;
+    }
+
+    .feedback {
+      margin: 15px 0 0;
+      color: #987a18;
+      font-size: 13px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .quiz-next {
+      display: flex;
+      margin: 18px auto 0;
+    }
+
+    /* Quiz result */
+    .result {
+      padding: 25px 17px;
+      border: 1px solid #f1e0a1;
+      border-radius: 23px;
+      background: linear-gradient(145deg, #fff7c9, #ffffff);
+      font-size: 14px;
+      line-height: 1.9;
+      text-align: center;
+      animation: popIn .4s ease both;
+    }
+
+    .result-icon {
+      margin-bottom: 8px;
+      font-size: 49px;
+    }
+
+    .result strong {
+      color: #9b7800;
+    }
+
+    .result-message {
+      margin: 12px 0 19px;
+      color: #877440;
+    }
+
+    /* Birthday message popup */
+    .popup-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      overflow-y: auto;
+      background: rgba(91, 71, 15, .48);
+      backdrop-filter: blur(8px);
+      animation: fadeIn .25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .popup {
+      position: relative;
+      width: min(100%, 390px);
+      max-height: 90vh;
+      padding: 30px 24px 25px;
+      overflow-y: auto;
+      border: 2px solid white;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #fffdf4, #fff4c7);
+      box-shadow: 0 30px 100px rgba(50, 38, 3, .28);
+      text-align: center;
+      animation: popIn .4s ease;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 35px;
+      height: 35px;
+      border: 1px solid #f0e3b0;
+      border-radius: 50%;
+      background: white;
+      color: #8b711a;
+      cursor: pointer;
+      font-size: 21px;
+    }
+
+    .popup-icon {
+      margin: 4px 0 10px;
+      font-size: 53px;
+    }
+
+    .popup h2 {
+      margin-bottom: 15px;
+      color: #9a7700;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    .popup-message {
+      color: #7e6b37;
+      font-size: 13px;
+      line-height: 1.95;
+    }
+
+    .last-line {
+      margin: 20px 0 5px;
+      padding: 17px 13px;
+      border: 1px dashed #e8ce61;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .72);
+      color: #92720c;
+      font-size: 13px;
+      line-height: 1.9;
+      animation: popIn .4s ease;
+    }
+
+    .gift-wrap { margin: 18px 0 5px; text-align: center; animation: popIn .45s ease; }
+    .gift-button { border: 0; background: transparent; cursor: pointer; color: var(--ink); font: inherit; }
+    .gift-emoji { display: block; font-size: clamp(76px, 18vw, 120px); line-height: 1.2; filter: drop-shadow(0 8px 12px rgba(151,113,0,.2)); animation: buttonGlow 2s ease-in-out infinite; }
+    .gift-caption { display: block; font-weight: 800; color: #987500; }
+    .video-backdrop { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 18px; background: rgba(75, 57, 15, .65); backdrop-filter: blur(7px); }
+    .video-card { position: relative; width: min(620px, 100%); padding: 22px; border: 2px solid white; border-radius: 24px; background: #fffdf5; box-shadow: 0 20px 70px rgba(0,0,0,.25); text-align: center; }
+    .video-card h2 { margin: 5px 35px 12px; color: #987500; font-family: "Playfair Display", serif; }
+    .video-card video { display: block; width: 100%; max-height: 65vh; border-radius: 15px; background: #fff2b6; }
+    .video-close { position: absolute; top: 8px; right: 12px; border: 0; background: transparent; font-size: 30px; cursor: pointer; color: #987500; }
+
+    .footer {
+      margin-top: 27px;
+      padding-top: 18px;
+      border-top: 1px solid #f0e5b8;
+      color: #aa965d;
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .footer strong {
+      color: #a58316;
+    }
+
+    .footer-heart {
+      display: inline-block;
+      margin: 0 4px;
+      color: #e5bc27;
+      animation: gentleBounce 2s ease-in-out infinite;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 16px 11px; }
+      .card { border-radius: 27px; }
+      .content { padding: 27px 19px 23px; }
+      .hero-icon { font-size: 54px; }
+      .photo-frame { height: 190px; }
+      .quiz { padding: 19px 13px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Floating white hearts and transparent balloons -->
+  <div class="floating-world" aria-hidden="true" id="floatingWorld"></div>
+
+  <span class="twinkle one" aria-hidden="true">✧</span>
+  <span class="twinkle two" aria-hidden="true">✦</span>
+  <span class="twinkle three" aria-hidden="true">✧</span>
+  <span class="twinkle four" aria-hidden="true">✦</span>
+
+  <article class="card">
+    <div class="browser-bar" aria-hidden="true">
+      <span class="browser-dot"></span>
+      <span class="browser-dot"></span>
+      <span class="browser-dot"></span>
+      <div class="browser-address">♡ a-little-love-for-ichaaa ♡</div>
+    </div>
+
+    <main class="content">
+      <div class="eyebrow">A very important announcement</div>
+
+      <!-- Replaced bow and envelope emojis -->
+      <div class="hero-icon" aria-hidden="true">💛🐝</div>
+
+      <h1>
+        Happy Birthday,<br>
+        <em>my Ichuuu!!</em>
+      </h1>
+
+      <p class="subtitle">
+        A little birthday magic for my favourite human. May your heart feel loved,
+         your smile stay bright,and your world be full of tiny happy moments. 💛🐝
+      </p>
+
+      <div class="divider" aria-hidden="true">☀️ ♡ ✨</div>
+
+      <div class="photo-frame" id="photoFrame">
+        <div class="photo-placeholder" id="photoPlaceholder">
+          <span class="camera">📸</span>
+          <strong>Our favourite little moment</strong>
+          <small>Add your favourite picture together here ♡</small>
+        </div>
+        <img
+          id="memoryPhoto"
+          src="sweet_photo.jpg"
+          alt="Our favourite memory"
+          onload="document.getElementById('photoPlaceholder').classList.add('hidden')"
+          onerror="this.style.display='none'"
+        >
+      </div>
+
+      <button class="btn" id="startButton" type="button">
+        <span>✨ Open Your Birthday Surprise ✨</span>
+      </button>
+
+      <section class="quiz hidden" id="quiz" aria-live="polite">
+        <h2>🌙 A Tiny Test of Us</h2>
+        <p class="quiz-subtitle">💛 A tiny love test from your favourite girl 😂🐝</p>
+
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Quiz progress"
+          aria-valuemin="0"
+          aria-valuemax="3"
+          aria-valuenow="0"
+          id="progress"
+        >
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p class="question-text" id="questionText"></p>
+        <div class="options" id="options"></div>
+        <p class="feedback" id="feedback" aria-live="polite"></p>
+
+        <button class="btn quiz-next hidden" id="nextButton" type="button">
+          <span>Next question 💛</span>
+        </button>
+      </section>
+
+      <section class="result hidden" id="result" aria-live="polite">
+        <div class="result-icon">🏆🥹💋</div>
+        <strong>CONGRATULATIONS, ICHAAA!</strong>
+
+        <p class="result-message">
+          Achievement unlocked: Stole Kuttu’s heart! 🔓💛 
+          The heart is yours now, and customer support does not accept returns. ❤️😂
+        </p>
+
+        <button class="btn" id="wishButton" type="button">
+          <span>Claim Your Birthday Wishes 💝</span>
+        </button>
+      </section>
+
+      <footer class="footer">
+        Handmade with <strong>love, kisses & a tiny bit of bullying</strong>
+        <br>
+        From the girl who loves you more than she admits.
+        <span class="footer-heart">♡</span>
+      </footer>
+    </main>
+  </article>
+
+  <!-- Birthday wishes popup -->
+  <div
+    class="popup-backdrop hidden"
+    id="popupBackdrop"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="popupTitle"
+  >
+    <div class="popup">
+      <button
+        class="popup-close"
+        id="closePopup"
+        type="button"
+        aria-label="Close birthday message"
+      >×</button>
+
+      <div class="popup-icon" aria-hidden="true">🎂🌻💛</div>
+
+      <h2 id="popupTitle">Happy Birthday, Ponnaaa!</h2>
+
+      <p class="popup-message">
+        Happy birthday, my love. ❤️ You mean more to me than words could ever explain. 
+        No matter how far apart we are, you’ll always have a special place in my heart that no one else could ever take.
+         If I had to choose all over again, I would still choose you, every single time.
+         I hope life gives you all the happiness you deserve, and I hope I get to be a part of it.
+          I love you so much, Ichu. ❤️🥹😘
+
+        <br><br>
+
+       Wishing you a beautiful year filled with happiness, love, and countless reasons to smile. 
+       May all your dreams come true, and may you always feel loved and appreciated.
+       You deserve all the wonderful things life has to offer. Happy Birthday, my favourite person! 💛🐝✨
+
+        <br><br>
+
+        <strong>One more year older. Still my baby. Forever my favourite. ♡</strong>
+      </p>
+
+      <div class="divider" aria-hidden="true">✦ ♡ ✦</div>
+
+      <button class="btn" id="finalButton" type="button">
+        <span>One Last Thing… 🥹</span>
+      </button>
+
+      <div class="last-line hidden" id="lastLine">
+        No matter the distance, my heart will always find its way to you, Ichu. 
+        You’re my favourite place to belong. 🥹💛🫶🏻
+        <br><br>
+
+        <strong>Same team. Every innings. Always you + me. ♡</strong>
+      </div>
+
+      <div class="gift-wrap hidden" id="giftWrap">
+        <button class="gift-button" id="giftButton" type="button" aria-label="Open our sweet memories video">
+          <span class="gift-emoji" aria-hidden="true">🎁</span>
+          <span class="gift-caption">A little gift for you… tap to open, Ichu! 💛</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keep memories.mp4 in the same folder as this HTML file, or change the source to your video filename/URL. -->
+  <div class="video-backdrop hidden" id="videoBackdrop" role="dialog" aria-modal="true" aria-labelledby="videoTitle">
+    <div class="video-card">
+      <button class="video-close" id="closeVideo" type="button" aria-label="Close video">×</button>
+      <h2 id="videoTitle">Our Sweet Little Memories 💛🐝</h2>
+      <video id="memoryVideo" controls playsinline preload="metadata">
+        <source src="memories.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+      <p style="margin-top:10px;font-size:12px;color:#8e7c4e">✨❤️</p>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    /* Create all floating decorations immediately when the page opens.
+       Random delays are short, so the screen is animated from the start. */
+    const floatingWorld = document.getElementById("floatingWorld");
+
+    const decorations = [
+      { type: "heart", left: 2, size: 52, duration: 13, delay: 0 },
+      { type: "balloon", left: 8, size: 36, duration: 16, delay: 0.4 },
+      { type: "yellow-heart", left: 11, size: 30, duration: 15, delay: 0.2 },
+      { type: "heart", left: 14, size: 62, duration: 17, delay: 0.8 },
+      { type: "bee", left: 18, size: 30, duration: 14, delay: 0.5 },
+      { type: "balloon", left: 20, size: 43, duration: 14, delay: 0.2 },
+      { type: "heart", left: 26, size: 46, duration: 12, delay: 1.1 },
+      { type: "yellow-heart", left: 29, size: 28, duration: 17, delay: 0.8 },
+      { type: "balloon", left: 32, size: 33, duration: 18, delay: 0.6 },
+      { type: "bee", left: 35, size: 27, duration: 16, delay: 1.1 },
+      { type: "heart", left: 38, size: 66, duration: 19, delay: 1.4 },
+      { type: "balloon", left: 44, size: 40, duration: 15, delay: 0.3 },
+      { type: "yellow-heart", left: 46, size: 32, duration: 13, delay: 0.7 },
+      { type: "heart", left: 50, size: 52, duration: 14, delay: 0.9 },
+      { type: "bee", left: 53, size: 29, duration: 18, delay: 1.3 },
+      { type: "balloon", left: 56, size: 37, duration: 17, delay: 0.5 },
+      { type: "heart", left: 62, size: 59, duration: 18, delay: 1.6 },
+      { type: "yellow-heart", left: 65, size: 27, duration: 16, delay: 0.4 },
+      { type: "balloon", left: 68, size: 44, duration: 13, delay: 0.1 },
+      { type: "bee", left: 71, size: 31, duration: 15, delay: 1.2 },
+      { type: "heart", left: 74, size: 48, duration: 16, delay: 1.2 },
+      { type: "balloon", left: 80, size: 35, duration: 19, delay: 0.7 },
+      { type: "yellow-heart", left: 82, size: 30, duration: 14, delay: 0.9 },
+      { type: "heart", left: 86, size: 64, duration: 17, delay: 1.8 },
+      { type: "balloon", left: 92, size: 39, duration: 15, delay: 0.4 },
+      { type: "bee", left: 95, size: 28, duration: 17, delay: 0.6 },
+      { type: "heart", left: 5, size: 39, duration: 18, delay: 2.2 },
+      { type: "balloon", left: 25, size: 31, duration: 14, delay: 1.9 },
+      { type: "yellow-heart", left: 39, size: 29, duration: 19, delay: 1.5 },
+      { type: "heart", left: 47, size: 50, duration: 20, delay: 2.5 },
+      { type: "bee", left: 61, size: 27, duration: 13, delay: 2.0 },
+      { type: "balloon", left: 72, size: 32, duration: 16, delay: 2.1 },
+      { type: "heart", left: 96, size: 45, duration: 13, delay: 1.7 },
+      { type: "balloon", left: 15, size: 29, duration: 15, delay: 2.8 },
+      { type: "yellow-heart", left: 56, size: 31, duration: 18, delay: 2.4 },
+      { type: "bee", left: 84, size: 30, duration: 18, delay: 3.0 }
+    ];
+
+    decorations.forEach((decoration, index) => {
+      const item = document.createElement("div");
+
+      item.classList.add("float-item");
+      item.style.setProperty("--left", `${decoration.left}%`);
+      item.style.setProperty("--size", `${decoration.size}px`);
+      item.style.setProperty("--duration", `${decoration.duration}s`);
+
+      /* Small stagger, rather than a long wait after page refresh. */
+      item.style.setProperty(
+        "--delay",
+        `${-(decoration.delay + (index % 4) * 0.35)}s`
+      );
+
+      if (decoration.type === "heart") {
+        item.classList.add("float-heart");
+        item.textContent = index % 2 === 0 ? "♡" : "♥";
+      } else if (decoration.type === "yellow-heart") {
+        item.classList.add("float-yellow-heart");
+        item.textContent = "💛";
+      } else if (decoration.type === "bee") {
+        item.classList.add("float-bee");
+        item.textContent = "🐝";
+      } else {
+        item.classList.add("balloon");
+
+        const string = document.createElement("span");
+        string.className = "balloon-string";
+        item.appendChild(string);
+      }
+
+      floatingWorld.appendChild(item);
+    });
+
+    /* Birthday quiz */
+    const questions = [
+      {
+        question: "Where does Kuttu want to kiss Ichu the most? 😚",
+        answers: [
+          "Forehead 🥹",
+          "Cheek🤭",
+          "Neck 💋",
+          "Everywhere, because why choose one? 😂💛"
+        ],
+        correct: 2,
+        feedback:
+          "Correct answer! Look at you being smart and handsome😌💕",
+        wrongFeedback:
+          "Ohhh, you don't remember where Kuttu wants to kiss you? 🥺😂 Try harder, handsome! 💛"
+      },
+      {
+        question: "On which date we did first start talking? 📅💛",
+        answers: [
+          "11-11-2020 💛",
+          "28-11-2020 🐝",
+          "12-05-2021✨",
+          "28-11-2021"
+        ],
+        correct: 1,
+        feedback:
+          "Yesss, you remembered our little beginning! 🥹💛",
+        wrongFeedback:
+          "Awww, you don't remember our special date? 🥺💔 Kuttu remembers it! Think about our little beginning, Ichu. 💛🐝"
+      },
+      {
+        question: "What nickname does Kuttu use for her favourite human? 🤭💛",
+        answers: [
+          "Ichu 💛",
+          "Ichaaa 🐝",
+          "My favourite troublemaker 😂"
+        ],
+        correct: 0,
+        feedback:
+          "Correct! Ichu has a whole collection of cute names just for him. 😂💛",
+        wrongFeedback:
+          "Excuse meee, you forgot your own cute nickname? 😭😂 How could you not remember what Kuttu calls you! 💛🐝"
+      }
+    ];
+
+        const $ = (id) => document.getElementById(id);
+
+    const startButton = $("startButton");
+    const quiz = $("quiz");
+    const questionText = $("questionText");
+    const optionsContainer = $("options");
+    const feedback = $("feedback");
+    const nextButton = $("nextButton");
+    const progressBar = $("progressBar");
+    const progress = $("progress");
+    const result = $("result");
+    const wishButton = $("wishButton");
+    const popupBackdrop = $("popupBackdrop");
+    const closePopupButton = $("closePopup");
+    const finalButton = $("finalButton");
+    const lastLine = $("lastLine");
+    const giftWrap = $("giftWrap");
+    const giftButton = $("giftButton");
+    const videoBackdrop = $("videoBackdrop");
+    const closeVideoButton = $("closeVideo");
+    const memoryVideo = $("memoryVideo");
+
+    let currentQuestion = 0;
+    let score = 0;
+    let hasAnswered = false;
+    let previousFocus = null;
+
+    function renderQuestion() {
+      hasAnswered = false;
+
+      const question = questions[currentQuestion];
+
+      feedback.textContent = "";
+      optionsContainer.replaceChildren();
+      nextButton.classList.add("hidden");
+
+      questionText.textContent =
+        `Question ${currentQuestion + 1} of ${questions.length}: ` +
+        question.question;
+
+      progressBar.style.width =
+        `${(currentQuestion / questions.length) * 100}%`;
+
+      progress.setAttribute("aria-valuenow", String(currentQuestion));
+
+      question.answers.forEach((answerText, index) => {
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "option";
+        button.textContent = answerText;
+        button.addEventListener("click", () => answerQuestion(index));
+
+        optionsContainer.appendChild(button);
+      });
+    }
+
+    function answerQuestion(selectedIndex) {
+      if (hasAnswered) return;
+
+      hasAnswered = true;
+
+      const question = questions[currentQuestion];
+      const isCorrect = selectedIndex === question.correct;
+
+      if (isCorrect) score++;
+
+      optionsContainer.querySelectorAll(".option").forEach((button, index) => {
+        button.disabled = true;
+
+        if (index === question.correct) {
+          button.classList.add("correct");
+        } else if (index === selectedIndex) {
+          button.classList.add("incorrect");
+        }
+      });
+
+      feedback.textContent = isCorrect
+        ? question.feedback
+        : question.wrongFeedback;
+
+      nextButton.innerHTML =
+        `<span>${currentQuestion === questions.length - 1
+          ? "See My Verdict 💌"
+          : "Next Question 💌"}</span>`;
+
+      nextButton.classList.remove("hidden");
+      nextButton.focus();
+    }
+
+    function showResults() {
+      quiz.classList.add("hidden");
+      result.classList.remove("hidden");
+
+      progressBar.style.width = "100%";
+      progress.setAttribute("aria-valuenow", String(questions.length));
+
+      const message = result.querySelector(".result-message");
+
+      if (score === questions.length) {
+        message.textContent =
+          "A perfect score! You know your girlfriend and deserve extra kisses. " +
+          "Your certificate is valid forever and cannot be transferred. 😂💛";
+      } else {
+        message.textContent =
+          `You scored ${score} out of ${questions.length}, but don't worry, ` +
+          "handsome boy — you still win my heart every single day. Your " +
+          "certificate is valid forever and cannot be transferred. 😂💛";
+      }
+
+      wishButton.focus();
+    }
+
+    function openPopup() {
+      previousFocus = document.activeElement;
+      popupBackdrop.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      closePopupButton.focus();
+    }
+
+    function closePopup() {
+      popupBackdrop.classList.add("hidden");
+      document.body.style.overflow = "";
+
+      if (previousFocus && typeof previousFocus.focus === "function") {
+        previousFocus.focus();
+      }
+    }
+
+    startButton.addEventListener("click", () => {
+      startButton.classList.add("hidden");
+      quiz.classList.remove("hidden");
+      renderQuestion();
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    });
+
+    wishButton.addEventListener("click", openPopup);
+    closePopupButton.addEventListener("click", closePopup);
+
+    popupBackdrop.addEventListener("click", (event) => {
+      if (event.target === popupBackdrop) closePopup();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        !popupBackdrop.classList.contains("hidden")
+      ) {
+        closePopup();
+      }
+    });
+
+    finalButton.addEventListener("click", () => {
+      lastLine.classList.remove("hidden");
+      giftWrap.classList.remove("hidden");
+      finalButton.innerHTML = "<span>Come Collect Your Hugs and Kissess!! 😚</span>";
+      finalButton.disabled = true;
+      giftWrap.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    function openMemoryVideo() {
+      videoBackdrop.classList.remove("hidden");
+      memoryVideo.currentTime = 0;
+      const playAttempt = memoryVideo.play();
+      if (playAttempt && typeof playAttempt.catch === "function") playAttempt.catch(() => {});
+      closeVideoButton.focus();
+    }
+
+    function closeMemoryVideo() {
+      memoryVideo.pause();
+      videoBackdrop.classList.add("hidden");
+    }
+
+    giftButton.addEventListener("click", openMemoryVideo);
+    closeVideoButton.addEventListener("click", closeMemoryVideo);
+    videoBackdrop.addEventListener("click", (event) => {
+      if (event.target === videoBackdrop) closeMemoryVideo();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !videoBackdrop.classList.contains("hidden")) {
+        closeMemoryVideo();
+      }
+    });
+  </script>
+</body>
+</html>
